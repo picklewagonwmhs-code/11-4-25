@@ -1,0 +1,24 @@
+#pragma once
+void default_constants();
+void loukas_auton();
+void match_auton_right();
+void match_auton_left();
+void drive_forward();
+void drive_backward();
+void drive_example();
+void turn_example();
+void drive_and_turn();
+void wait_until_change_speed();
+void swing_example();
+void motion_chaining();
+void combining_movements();
+void interfered_example();
+void odom_drive_example();
+void odom_pure_pursuit_example();
+void odom_pure_pursuit_wait_until_example();
+void odom_boomerang_example();
+void odom_boomerang_injected_pure_pursuit_example();
+void measure_offsets();
+void placeholder();
+void placeholder_comp();
+inline auto autbut = true;
