@@ -431,10 +431,10 @@ void match_auton_right() {
   chassis.odom_xyt_set(0_in, 0_in, 0_deg);
   match_loader.set(false);
 
-  chassis.pid_odom_set({{0_in, 35_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{0_in, -27_in}, rev, 110},  true);
   chassis.pid_wait();
 
-  chassis.pid_odom_set({{-15_in, 35_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{18_in, -27_in}, rev, 110},  true);
   chassis.pid_wait();
 
   outake.move(100);
