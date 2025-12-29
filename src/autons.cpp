@@ -454,18 +454,7 @@ void match_auton_right() {
   intake.move(0);
   outake.move(0);
 
-
-
-
-
-  
-
-
-
   //high deposit
-
-
-
 
 }
 
@@ -475,20 +464,27 @@ void match_auton_left() {
 
   chassis.odom_xyt_set(0_in, 0_in, 0_deg);
 
+  chassis.odom_xyt_set(0_in, 0_in, 0_deg);
+  match_loader.set(false);
+
   intake.move(127);
 
-  chassis.pid_odom_set({{0_in, 32.8_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{-5_in, 32_in}, fwd, 110},  true);
   chassis.pid_wait();
 
+  pros::delay(500);
   intake.move(0);
 
-  chassis.pid_odom_set({{24.8_in, 37.3_in}, rev, 110},  true);
+  chassis.pid_odom_set({{-30_in, 15_in}, fwd, 110},  true);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(-180_deg, TURN_SPEED);
+  chassis.pid_odom_set({{-30_in, 26_in}, fwd, 110},  true);
   chassis.pid_wait();
 
-  outake.move(127);
+  outake.move(100);
+  pros::delay(500);
+
+
 
 
 
