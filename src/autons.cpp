@@ -434,10 +434,29 @@ void match_auton_right() {
   chassis.pid_odom_set({{0_in, -27_in}, rev, 110},  true);
   chassis.pid_wait();
 
-  chassis.pid_odom_set({{18_in, -27_in}, rev, 110},  true);
+  chassis.pid_odom_set({{21_in, -30_in}, rev, 110},  true);
   chassis.pid_wait();
 
   outake.move(100);
+  pros::delay(500);
+  intake.move(100);
+
+  chassis.pid_odom_set({{28_in, -5_in}, rev, 110},  true);
+  chassis.pid_wait();
+
+  pros::delay(500);
+  outake.move(100);
+
+  chassis.pid_odom_set({{36.5_in, 0_in}, rev, 110},  true);
+  chassis.pid_wait();
+  pros::delay(500);
+
+  intake.move(0);
+  outake.move(0);
+
+
+
+
 
   
 

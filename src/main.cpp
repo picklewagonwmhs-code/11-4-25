@@ -269,7 +269,7 @@ pros::Task ezScreenTask(ez_screen_task);
 
 /**
  * Gives you some extras to run in your opcontrol:
- * - run your autonomous routine in opcontrol by pressing DOWN and B
+ * - run yourz autonomous routine in opcontrol by pressing DOWN and B
  *   - to prevent this from accidentally happening at a competition, this
  *     is only enabled when you're not connected to competition control.
  * - gives you a GUI to change your PID values live by pressing X
