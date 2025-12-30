@@ -431,14 +431,22 @@ void match_auton_right() {
   chassis.odom_xyt_set(0_in, 0_in, 0_deg);
   match_loader.set(false);
 
+  // Go down
+
   chassis.pid_odom_set({{0_in, -27_in}, rev, 110},  true);
   chassis.pid_wait();
+
+  // Go to long goal
 
   chassis.pid_odom_set({{21_in, -33_in}, rev, 110},  true);
   chassis.pid_wait();
 
+  // outake
+
   outake.move(100);
   pros::delay(500);
+
+  //  backs up
 
   chassis.pid_odom_set({{5_in, -33_in}, fwd, 110},  true);
   chassis.pid_wait();
@@ -458,7 +466,7 @@ void match_auton_right() {
 
   pros::delay(500);
 
-  chassis.pid_odom_set({{23_in, -5_in}, fwd, 20},  true);
+  chassis.pid_odom_set({{26_in, -3_in}, fwd, 40},  true);
   chassis.pid_wait();
 
   match_loader.set(false);
