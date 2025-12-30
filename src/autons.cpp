@@ -458,13 +458,13 @@ void match_auton_right() {
 
   pros::delay(500);
 
-  chassis.pid_odom_set({{22_in, -6_in}, fwd, 25},  true);
+  chassis.pid_odom_set({{23_in, -5_in}, fwd, 20},  true);
   chassis.pid_wait();
 
   match_loader.set(false);
 
 
-  chassis.pid_odom_set({{33.3_in, 6_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{34_in, 6.5_in}, fwd, 110},  true);
   chassis.pid_wait();
 
 
