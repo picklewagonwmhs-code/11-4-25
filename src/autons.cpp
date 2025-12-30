@@ -446,10 +446,10 @@ void match_auton_right() {
   outake.move(0);
   intake.move(100);
 
-  chassis.pid_turn_set(90_deg, TURN_SPEED);
-  chassis.pid_wait();
 
-  chassis.pid_odom_set({{16.5_in, -12_in}, fwd, 60},  true);
+  chassis.pid_odom_pp_set({{{10.75_in, -22_in}, fwd, 110},
+                           {{16.5_in, -12_in}, fwd, 60}});
+
   chassis.pid_wait();
 
   match_loader.set(true);
