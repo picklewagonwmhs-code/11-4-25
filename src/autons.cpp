@@ -433,30 +433,55 @@ void match_auton_right() {
 
   // Go down
 
-  chassis.pid_odom_set({{0_in, -27_in}, rev, 110},  true);
+  chassis.pid_odom_set({{0_in, -33_in}, rev, 120},  true);
   chassis.pid_wait();
+
+  //  backs up to match loader
+
+  intake.move(110);
+
+  match_loader.set(true);
+
+  chassis.pid_odom_set({{-8.5_in, -33_in}, fwd, 115});
+  chassis.pid_wait();
+
+  // goes in and out
+
+  chassis.pid_odom_pp_set({{{10_in, -33_in}, rev, 60},
+                           {{-7.25_in, -33_in}, fwd, 115}});
+
+  chassis.pid_wait();
+
+  
+  outake.move(10);
 
   // Go to long goal
 
-  chassis.pid_odom_set({{21_in, -33_in}, rev, 110},  true);
+  chassis.pid_odom_set({{24.5_in, -33_in}, rev, 125},  true);
   chassis.pid_wait();
 
-  // outake
+  match_loader.set(false);
 
-  outake.move(100);
-  pros::delay(500);
+  // outake
+  intake.move(110);
+  outake.move(110);
+  pros::delay(2555);
+  outake.move(0);
 
   //  backs up
 
-  chassis.pid_odom_set({{5_in, -33_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{5_in, -33_in}, fwd, 120},  true);
   chassis.pid_wait();
+  
+
+  // GOES TO GET TS BALLS
 
   outake.move(0);
   intake.move(100);
 
 
-  chassis.pid_odom_pp_set({{{10.75_in, -22_in}, fwd, 110},
-                           {{16.5_in, -12_in}, fwd, 60}});
+  chassis.pid_odom_pp_set({{{10_in, -22_in}, fwd, 110},
+                           {{15_in, -12_in}, fwd, 60}});
 
   chassis.pid_wait();
 
@@ -464,21 +489,23 @@ void match_auton_right() {
 
   outake.move(0);
 
-  pros::delay(500);
-
-  chassis.pid_odom_set({{26_in, -3_in}, fwd, 40},  true);
+  chassis.pid_odom_set({{25_in, -3_in}, fwd, 35},  true);
   chassis.pid_wait();
+
+  intake.move(110);
+
 
   match_loader.set(false);
 
+  outake.move(-30);
 
-  chassis.pid_odom_set({{34_in, 6.5_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{33_in,5_in}, fwd, 120},  true);
   chassis.pid_wait();
 
 
-  intake.move(-75);
+  intake.move(-115);
   outake.move(-100);
-  pros::delay(3000);
+  pros::delay(4000);
 
   intake.move(0);
   outake.move(0);
@@ -493,12 +520,16 @@ void match_auton_left() {
 
   chassis.odom_xyt_set(0_in, 0_in, 0_deg);
 
-  chassis.odom_xyt_set(0_in, 0_in, 0_deg);
   match_loader.set(false);
+
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.odom_xyt_set(0_in, 0_in, 0_deg);
 
   intake.move(127);
 
-  chassis.pid_odom_set({{-5_in, 32_in}, fwd, 110},  true);
+  chassis.pid_odom_set({{-2_in, 10_in}, fwd, 110},  true);
   chassis.pid_wait();
 
   pros::delay(500);

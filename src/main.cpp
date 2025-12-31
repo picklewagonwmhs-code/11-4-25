@@ -111,12 +111,12 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
+      {"Match Auton Left\n\nLeft side auton for competition", match_auton_left},
       {"Match Auton Right\n\nRight side auton for competition", match_auton_right},
       {"Do Nothing maybe spin a bit yk", placeholder_comp},
       {"Do Nothing", placeholder},
       {"Drive Backward", drive_backward},
       {"Loukas Auton\n\nA cool path made by Loukas!", loukas_auton},
-      {"Match Auton Left\n\nLeft side auton for competition", match_auton_left},
       {"Drive Forward", drive_forward}, 
       {"Drive\n\nDrive forward and come back", drive_example},
       {"Turn\n\nTurn 3 times.", turn_example},
