@@ -111,8 +111,8 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
-      {"Match Auton Left\n\nLeft side auton for competition", match_auton_left},
       {"Match Auton Right\n\nRight side auton for competition", match_auton_right},
+      {"Match Auton Left\n\nLeft side auton for competition", match_auton_left},
       {"Do Nothing maybe spin a bit yk", placeholder_comp},
       {"Do Nothing", placeholder},
       {"Drive Backward", drive_backward},
@@ -174,7 +174,7 @@ void competition_initialize() {
   chassis.initialize();
   ez::as::initialize();
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
-  // . . .
+
 }
 
 /**
